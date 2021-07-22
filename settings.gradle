@@ -1,2 +1,3 @@
 rootProject.name = '1vs1'
-
+include '1vs1-api'
+include '1vs1-plugin'

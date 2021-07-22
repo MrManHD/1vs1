@@ -3,17 +3,38 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.5.21'
 }
 
+apply plugin: 'java'
+apply plugin: 'java-library'
+apply plugin: 'org.jetbrains.kotlin.jvm'
+
 group 'net.mrmanhd'
 version '1.0.1'
 
 repositories {
     mavenCentral()
+
+    maven {
+        name 'spigotmc-repo'
+        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+
+    maven {
+        url "https://repo.thesimplecloud.eu/artifactory/gradle-release-local/"
+    }
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation 'org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT'
+
+    compile(group: 'eu.thesimplecloud.jsonlib', name: 'json-lib', version: "1.0.9")
+}
+
+jar {
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
 test {

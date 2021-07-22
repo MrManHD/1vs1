@@ -1,0 +1,12 @@
+name: 1vs1
+version: 1.0.1
+author: MrManHD
+website: https://mrmanhd.gitbook.io/plugins
+
+main: net.mrmanhd.onevsone.minigame.plugin.SpigotPlugin
+
+commands:
+  mapsetup:
+    permission: onevsone.command.mapsetup
+  setup:
+    permission: onevsone.command.setup

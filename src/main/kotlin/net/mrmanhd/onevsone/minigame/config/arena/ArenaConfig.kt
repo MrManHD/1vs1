@@ -1,12 +1,15 @@
-package net.mrmanhd.onevsone.minigame.config.default.settings
+package net.mrmanhd.onevsone.minigame.config.arena
+
+import net.mrmanhd.onevsone.minigame.config.arena.scoreboard.ScoreboardSettings
 
 /**
  * Created by MrManHD
- * Class create at 22.07.2021 17:15
+ * Class create at 23.07.2021 10:07
  */
 
-class ArenaSettings(
+class ArenaConfig(
     val availableRounds: List<Int>,
+    val scoreboardSettings: ScoreboardSettings,
     val countdownTimer: Int,
     val arenaCountdowns: List<ArenaCountdown>
 ) {

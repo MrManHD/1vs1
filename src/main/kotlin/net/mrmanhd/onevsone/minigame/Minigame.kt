@@ -1,8 +1,10 @@
 package net.mrmanhd.onevsone.minigame
 
+import net.mrmanhd.onevsone.minigame.config.arena.ArenaConfigLoader
 import net.mrmanhd.onevsone.minigame.config.default.ConfigLoader
 import net.mrmanhd.onevsone.minigame.config.message.MessageConfigLoader
 import net.mrmanhd.onevsone.minigame.game.GameExecutor
+import net.mrmanhd.onevsone.minigame.game.scoreboard.ScoreboardHandler
 import org.bukkit.plugin.java.JavaPlugin
 
 /**
@@ -16,11 +18,14 @@ class Minigame(
 
     val gameExecutor = GameExecutor()
     val configLoader = ConfigLoader()
+    val arenaConfigLoader = ArenaConfigLoader()
     val messageConfigLoader = MessageConfigLoader()
+    val scoreboardHandler = ScoreboardHandler()
 
     init {
         instance = this
         this.configLoader.loadConfig()
+        this.arenaConfigLoader.loadConfig()
         this.messageConfigLoader.loadConfig()
     }
 

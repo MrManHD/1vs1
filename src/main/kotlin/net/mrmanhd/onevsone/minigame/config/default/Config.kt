@@ -1,6 +1,5 @@
 package net.mrmanhd.onevsone.minigame.config.default
 
-import net.mrmanhd.onevsone.minigame.config.default.settings.ArenaSettings
 import org.bukkit.Location
 
 /**
@@ -10,6 +9,5 @@ import org.bukkit.Location
 
 class Config(
     var chatPrefix: String,
-    var spawnLocation: Location?,
-    val arenaSettings: ArenaSettings
+    var spawnLocation: Location?
 )

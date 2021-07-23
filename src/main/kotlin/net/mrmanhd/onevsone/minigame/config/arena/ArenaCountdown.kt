@@ -1,4 +1,4 @@
-package net.mrmanhd.onevsone.minigame.config.default.settings
+package net.mrmanhd.onevsone.minigame.config.arena
 
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player

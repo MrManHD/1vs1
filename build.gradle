@@ -31,6 +31,7 @@ dependencies {
     implementation 'org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT'
 
     compile(group: 'eu.thesimplecloud.jsonlib', name: 'json-lib', version: "1.0.9")
+    compile 'fr.mrmicky:fastboard:1.2.0'
 }
 
 jar {

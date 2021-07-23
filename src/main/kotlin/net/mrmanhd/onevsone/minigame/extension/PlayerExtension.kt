@@ -3,6 +3,7 @@ package net.mrmanhd.onevsone.minigame.extension
 import net.md_5.bungee.api.ChatMessageType
 import net.md_5.bungee.api.chat.TextComponent
 import net.mrmanhd.onevsone.minigame.Minigame
+import net.mrmanhd.onevsone.minigame.game.arena.Arena
 import net.mrmanhd.onevsone.minigame.message.MessageType
 import org.bukkit.entity.Player
 import java.text.MessageFormat
@@ -26,4 +27,8 @@ fun Player.sendConfigMessage(messageKey: String, vararg arguments: String) {
         MessageType.ACTIONBAR -> this.spigot().sendMessage(ChatMessageType.ACTION_BAR,
             TextComponent("§7${message.message}"))
     }
+}
+
+fun Player.getArena(): Arena? {
+    return Minigame.instance.gameExecutor.getArenaByPlayer(this)
 }

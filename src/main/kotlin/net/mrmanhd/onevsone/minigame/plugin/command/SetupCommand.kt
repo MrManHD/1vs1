@@ -3,6 +3,7 @@ package net.mrmanhd.onevsone.minigame.plugin.command
 import net.mrmanhd.onevsone.minigame.Minigame
 import net.mrmanhd.onevsone.minigame.extension.sendConfigMessage
 import net.mrmanhd.onevsone.minigame.game.arena.Arena
+import org.bukkit.Bukkit
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -29,7 +30,7 @@ class SetupCommand : CommandExecutor, TabCompleter {
                 sender.sendConfigMessage("setup.command.usage.help.prefix")
                 sender.sendConfigMessage("setup.command.usage.help.spawn")
 
-                Arena(Minigame.instance.gameExecutor.getMapByName("Test")!!, arrayListOf(), 3).startCountdown()
+                Arena(Minigame.instance.gameExecutor.getMapByName("Test")!!, arrayListOf(sender, Bukkit.getPlayer("MrBeanHD")!!), 3).startGame()
             }
 
             1 -> {

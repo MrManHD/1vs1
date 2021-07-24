@@ -6,6 +6,9 @@ website: https://mrmanhd.gitbook.io/plugins
 main: net.mrmanhd.onevsone.minigame.plugin.SpigotPlugin
 
 commands:
+  challenge:
+  kitsetup:
+    permission: onevsone.command.kitsetup
   mapsetup:
     permission: onevsone.command.mapsetup
   setup:

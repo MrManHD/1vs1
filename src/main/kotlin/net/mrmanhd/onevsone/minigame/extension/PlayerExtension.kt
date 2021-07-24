@@ -19,7 +19,7 @@ fun Player.sendConfigMessage(messageKey: String, vararg arguments: String) {
     val message = messageConfig.messages[messageKey]
         ?: throw NullPointerException("Cannot found messageKey: $messageKey")
 
-    val messageFormat = MessageFormat.format(message.message, arguments)
+    val messageFormat = MessageFormat.format(message.message, *arguments)
 
     when (message.type) {
         MessageType.CHAT -> this.sendMessage("${config.chatPrefix} " + messageFormat)

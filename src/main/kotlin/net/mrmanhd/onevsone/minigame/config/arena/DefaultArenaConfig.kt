@@ -22,13 +22,14 @@ object DefaultArenaConfig {
     private fun getScoreboardSettings(): ScoreboardSettings {
         return ScoreboardSettings(
             "§6§l1vs1",
-            hashMapOf(
-                Pair(0, ""),
-                Pair(1, "§eMap §8»§7§o %MAP%"),
-                Pair(2, ""),
-                Pair(3, "§eGegner §8»§7§o %FIGHTER%"),
-                Pair(4, "§eRunde §8»§7§o %TARGET_ROUND%§8§o/§7§o%MAX_ROUNDS%"),
-                Pair(5, "")
+            arrayListOf(
+                "",
+                "§eMap §8»§7§o %MAP%",
+                "",
+                "§eKit §8»§7§o %KIT%",
+                "§eGegner §8»§7§o %FIGHTER%",
+                "§eRunde §8»§7§o %TARGET_ROUND%§8§o/§7§o%MAX_ROUNDS%",
+                ""
             )
         )
     }

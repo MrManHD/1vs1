@@ -15,6 +15,8 @@ class GameMap(
     val locationTwo: Location
 ) : Nameable {
 
+    fun getLocationList(): List<Location> = arrayListOf(locationOne, locationTwo)
+
     override fun getName(): String = this.mapName
 
 }

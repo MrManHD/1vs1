@@ -1,5 +1,6 @@
 package net.mrmanhd.onevsone.minigame.config.default
 
+import net.mrmanhd.onevsone.minigame.config.arena.scoreboard.ScoreboardSettings
 import org.bukkit.Location
 
 /**
@@ -9,5 +10,7 @@ import org.bukkit.Location
 
 class Config(
     var chatPrefix: String,
-    var spawnLocation: Location?
+    var defaultGamemode: String,
+    var spawnLocation: Location?,
+    val spawnScoreboardSettings: ScoreboardSettings
 )

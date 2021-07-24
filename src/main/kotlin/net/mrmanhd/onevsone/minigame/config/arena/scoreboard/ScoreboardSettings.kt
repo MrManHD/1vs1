@@ -7,5 +7,5 @@ package net.mrmanhd.onevsone.minigame.config.arena.scoreboard
 
 class ScoreboardSettings(
     val title: String,
-    val scores: Map<Int, String>
+    val scores: List<String>
 )

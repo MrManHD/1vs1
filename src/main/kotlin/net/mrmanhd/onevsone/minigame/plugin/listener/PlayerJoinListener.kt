@@ -1,8 +1,10 @@
 package net.mrmanhd.onevsone.minigame.plugin.listener
 
 import net.mrmanhd.onevsone.minigame.Minigame
+import net.mrmanhd.onevsone.minigame.config.default.Config
 import net.mrmanhd.onevsone.minigame.extension.sendConfigMessage
-import net.mrmanhd.onevsone.minigame.message.MessagePlaceholder
+import org.bukkit.GameMode
+import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
@@ -19,14 +21,28 @@ class PlayerJoinListener : Listener {
         val player = event.player
         val gameExecutor = Minigame.instance.gameExecutor
 
-        if (Minigame.instance.configLoader.loadConfig().spawnLocation == null) {
-            player.sendConfigMessage("setup.first.failed.spawn")
-        }
+        val config = Minigame.instance.configLoader.loadConfig()
+        player.gameMode = GameMode.valueOf(config.defaultGamemode.uppercase())
+
+        this.handleSpawnLocation(player, config)
 
         if (gameExecutor.availableMaps.isEmpty()) {
             player.sendConfigMessage("setup.first.failed.map")
         }
 
+        if (gameExecutor.availableKits.isEmpty()) {
+            player.sendConfigMessage("setup.first.failed.kit")
+        }
+
+        Minigame.instance.scoreboardHandler.setSpawnScoreboard(player)
+    }
+
+    private fun handleSpawnLocation(player: Player, config: Config) {
+        config.spawnLocation?.let {
+            player.teleport(it)
+            return
+        }
+        player.sendConfigMessage("setup.first.failed.spawn")
     }
 
 }

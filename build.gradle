@@ -28,7 +28,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 
-    implementation 'org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT'
+    implementation 'org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT'
 
     compile(group: 'eu.thesimplecloud.jsonlib', name: 'json-lib', version: "1.0.9")
     compile 'fr.mrmicky:fastboard:1.2.0'
